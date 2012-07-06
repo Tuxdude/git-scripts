@@ -71,6 +71,7 @@ sub main
 	&process();
 	if ($Reverse_order) {
 		untie *STDOUT;
+                print "\n";
 	}
 }
 
