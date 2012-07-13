@@ -96,6 +96,10 @@ $key = ARGV.delete("--key") || ARGV.delete("-k")
 $show_relations = ARGV.delete("--relations") || ARGV.delete("-r")
 ARGV.each { |a| abort "Error: unknown argument #{a}." if a =~ /^--/ }
 
+## ASH: Override $all and $all_commits
+$all = 1
+$all_commits = 1
+
 ## search up the path for a file
 def find_file fn
   while true
