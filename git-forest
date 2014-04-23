@@ -144,7 +144,7 @@ sub process
 			else {
 				print $Color{sha};
 			}
-			print $mini_sha, $Color{at}, " ", $Color{default}, $msg, "\n";
+			print " ", $mini_sha, $Color{at}, " ", $Color{default}, $msg, "\n";
 		} else {
 			print $msg, "\n";
 		}
