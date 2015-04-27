@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+# Author: Ash <tuxdude.io@gmail.com>
+#
+
+# Fetch from remote and rebase if necessary
+if [ -n "$1" ]; then
+    gitbin="git -C $1"
+else
+    gitbin="git"
+fi
+
+$gitbin fetch --all
+if [ $($gitbin rev-parse HEAD) != $($gitbin rev-parse @{u}) ]; then
+    $gitbin rebase @{u} --preserve-merges
+fi
+
